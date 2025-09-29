@@ -10,7 +10,28 @@ package assign05;
  * @version UPDATE WITH MOST RECENT DATE
  */
 public class CalendarDateDemo {
-
+	
+	
+	/**
+     * Counts how many dates in the given array come before the target date
+     * 
+     * @param dates  an array of CalendarDate obj
+     * @param target the date to compare
+     * @return the number of dates in the array that come before the target
+     */
+    public static int countDatesBefore(CalendarDate[] dates, CalendarDate target) {
+        int count = 0;
+        
+        for (CalendarDate date : dates) {
+            if (date.comesBefore(target)) {
+                count++;
+            }
+        }
+        
+        return count;
+    }
+    
+    
 	public static void main(String[] args) {
 		CalendarDate lastDayOfClass = new CalendarDate(12, 4, 2025);
 		CalendarDate finalExamDate = new CalendarDate(12, 12, 2025);
