@@ -1,10 +1,11 @@
 package assign05;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Scanner;
 
-import org.junit.jupiter.api.Test;
+
 
 /**
  * This class contains unit tests to check the correctness of the Month class.
@@ -67,5 +68,11 @@ public class MonthTest {
 		Month mar = new Month(3);
 		assertFalse(mar.equals(new Scanner(System.in)),
 				"equals method does not return false when passed a non-Month object");
+	}
+	
+	@Test
+	public void testSep31() {
+		Month sep = new Month(12);
+		assertTrue(sep.validDay(31, false), "Sep 31 is valid");
 	}
 }
